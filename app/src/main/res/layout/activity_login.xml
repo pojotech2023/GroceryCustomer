@@ -245,7 +245,7 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <wrteam.ecart.customer.ui.Pinview
+                <com.groger.customer.ui.Pinview
                     android:id="@+id/pinViewOTP"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"

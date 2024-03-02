@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 33
     defaultConfig {
-        applicationId "wrteam.ecart.customer"
+        applicationId "com.groger.customer"
         minSdkVersion 27
         targetSdkVersion 33
         versionCode 12
@@ -30,7 +30,7 @@ android {
             crunchPngs true
         }
     }
-    namespace 'wrteam.ecart.customer'
+    namespace 'com.groger.customer'
 }
 
 repositories {

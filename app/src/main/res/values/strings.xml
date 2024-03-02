@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">eCart Customer</string>
 
+    <string name="google_api_key">AIzaSyC4y8j7jRSABW_SPsu-WtD-BdDGga05yYA</string>
+
     <!-- ************************************************************************************************************* -->
     <!--    For privacy policy and terms and condition whatever you set words in privacy_policy and terms_conditions that words must be contain in msg_privacy_terms.Other wise app will crash-->
     <string name="privacy_policy">Privacy Policy</string>
