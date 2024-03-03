@@ -49,6 +49,7 @@ import java.time.Instant
 import java.util.*
 import javax.crypto.spec.SecretKeySpec
 import kotlin.system.exitProcess
+import com.groger.customer.R
 
 @SuppressLint("SetTextI18n")
 class ApiConfig : Application() {
@@ -318,8 +319,8 @@ class ApiConfig : Application() {
                     }) {
                     override fun getHeaders(): MutableMap<String, String> {
                         val params1: MutableMap<String, String> = HashMap()
-                        params1[Constant.AUTHORIZATION] =
-                            "Bearer " + createJWT("eKart", "eKart Authentication")
+                        //params1[Constant.AUTHORIZATION] = "Bearer " + createJWT("eKart", "eKart Authentication")
+                        params1[Constant.AUTHORIZATION] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDk0Mzk3MDEsImlzcyI6ImVLYXJ0IiwiZXhwIjoxNzA5NDQxNTAxLCJzdWIiOiJlS2FydCBBdXRoZW50aWNhdGlvbiIsIndlYiI6IjI5MjYwNDE4IiwiY3VzdCI6IjIyMDE1OTExIiwiYWRtaW4iOiIzMDI4ODQ0MiJ9.n518OLZlGVy1ITHHazRpA0_TM3iaUK8SkyBRSKo725o"
                         return params1
                     }
 

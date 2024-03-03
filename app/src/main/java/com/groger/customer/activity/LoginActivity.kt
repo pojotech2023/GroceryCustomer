@@ -53,6 +53,7 @@ import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
+import com.groger.customer.R
 
 class LoginActivity : AppCompatActivity() {
     lateinit var lytOTP: LinearLayout

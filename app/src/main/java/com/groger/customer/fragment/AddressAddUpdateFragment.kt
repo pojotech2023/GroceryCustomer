@@ -44,6 +44,7 @@ import com.groger.customer.helper.Session
 import com.groger.customer.helper.VolleyCallback
 import com.groger.customer.model.Address
 import com.groger.customer.model.City
+import com.groger.customer.R
 
 @SuppressLint("NotifyDataSetChanged")
 class AddressAddUpdateFragment : Fragment(), OnMapReadyCallback {

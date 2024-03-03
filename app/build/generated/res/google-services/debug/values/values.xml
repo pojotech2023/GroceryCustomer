@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">26980361184</string>
+    <string name="google_api_key" translatable="false">AIzaSyCUHqRV2vRVrAGEA4p_lJKcmLJ6LVa8rOQ</string>
+    <string name="google_app_id" translatable="false">1:26980361184:android:01dee356fcf9a35238c185</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCUHqRV2vRVrAGEA4p_lJKcmLJ6LVa8rOQ</string>
+    <string name="google_storage_bucket" translatable="false">groger-android.appspot.com</string>
+    <string name="project_id" translatable="false">groger-android</string>
+</resources>
