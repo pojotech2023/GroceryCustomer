@@ -320,7 +320,7 @@ class ApiConfig : Application() {
                     override fun getHeaders(): MutableMap<String, String> {
                         val params1: MutableMap<String, String> = HashMap()
                         //params1[Constant.AUTHORIZATION] = "Bearer " + createJWT("eKart", "eKart Authentication")
-                        params1[Constant.AUTHORIZATION] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDk0Mzk3MDEsImlzcyI6ImVLYXJ0IiwiZXhwIjoxNzA5NDQxNTAxLCJzdWIiOiJlS2FydCBBdXRoZW50aWNhdGlvbiIsIndlYiI6IjI5MjYwNDE4IiwiY3VzdCI6IjIyMDE1OTExIiwiYWRtaW4iOiIzMDI4ODQ0MiJ9.n518OLZlGVy1ITHHazRpA0_TM3iaUK8SkyBRSKo725o"
+                        params1[Constant.AUTHORIZATION] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDk2NTU0MzQsImlzcyI6ImVLYXJ0IiwiZXhwIjoyMTQ3NDgzNjQ3LCJzdWIiOiJlS2FydCBBdXRoZW50aWNhdGlvbiIsIndlYiI6IjI5MjYwNDE4IiwiY3VzdCI6IjIyMDE1OTExIiwiYWRtaW4iOiIzMDI4ODQ0MiJ9.vY2uQtIOoJQd30Zm8NHehu7AL3R68MnHDzVVAEAFUQ4"
                         return params1
                     }
 

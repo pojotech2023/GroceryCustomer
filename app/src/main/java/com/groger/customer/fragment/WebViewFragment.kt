@@ -111,9 +111,14 @@ class WebViewFragment : Fragment() {
 
     private fun getInvoice(type: String) {
         try {
-            mWebView.loadUrl(
+           /* mWebView.loadUrl(
                 Constant.INVOICE_URL + "?id=" + type.split("#".toRegex())
                     .toTypedArray()[1] + "&token=" + createJWT("eKart", "eKart Authentication")
+            )*/
+
+            mWebView.loadUrl(
+                Constant.INVOICE_URL + "?id=" + type.split("#".toRegex())
+                    .toTypedArray()[1] + "&token=" + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDk2NTU0MzQsImlzcyI6ImVLYXJ0IiwiZXhwIjoyMTQ3NDgzNjQ3LCJzdWIiOiJlS2FydCBBdXRoZW50aWNhdGlvbiIsIndlYiI6IjI5MjYwNDE4IiwiY3VzdCI6IjIyMDE1OTExIiwiYWRtaW4iOiIzMDI4ODQ0MiJ9.vY2uQtIOoJQd30Zm8NHehu7AL3R68MnHDzVVAEAFUQ4"
             )
             btnPrint.visibility = View.VISIBLE
             btnPrint.setOnClickListener {  createWebPagePrint(mWebView) }
