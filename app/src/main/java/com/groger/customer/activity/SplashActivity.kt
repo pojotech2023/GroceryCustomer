@@ -2,35 +2,51 @@ package com.groger.customer.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.firebase.messaging.FirebaseMessaging
-import org.json.JSONException
-import org.json.JSONObject
+import com.groger.customer.BuildConfig
 import com.groger.customer.R
 import com.groger.customer.helper.ApiConfig
 import com.groger.customer.helper.Constant
 import com.groger.customer.helper.Session
 import com.groger.customer.helper.VolleyCallback
+import org.json.JSONException
+import org.json.JSONObject
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : Activity() {
     lateinit var session: Session
     lateinit var activity: Activity
     private val SPLASH_TIME_OUT = 500
+
+    var versionCode: Int = 1
+    var versionName: String = "1.0.0"
+
+    var liveVersionCode: Int = 1
+    var liveVersionName: String = "1.0.0"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activity = this@SplashActivity
         session = Session(activity)
         session.setBoolean("update_skip", false)
+
+        versionCode = BuildConfig.VERSION_CODE
+        versionName = BuildConfig.VERSION_NAME
+
         val window = this.window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.setFlags(
@@ -208,4 +224,50 @@ class SplashActivity : Activity() {
             proceedFurther()
         }
     }
+
+    private fun newVersionAlertDialog() {
+
+        try {
+            val builder: AlertDialog.Builder = AlertDialog.Builder(this@SplashActivity)
+            builder.setTitle("Alert")
+            builder.setMessage("This App new version is available click ok to get a latest version")
+            builder.setCancelable(false)
+
+            builder.setPositiveButton("OK",
+                DialogInterface.OnClickListener { dialog, which ->
+                    try {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName")))
+                    } catch (e: ActivityNotFoundException) {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$packageName")))
+                    }
+                })
+
+            builder.setNegativeButton("CANCEL",
+                DialogInterface.OnClickListener { dialog, which ->
+                    dialog.dismiss()
+                    dialog.cancel()
+                    openMainActivity()
+                })
+
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.show()
+
+        }catch (e:Exception){
+            openMainActivity()
+            e.printStackTrace()
+        }
+
+    }
+
+    private fun openMainActivity(){
+        Handler().postDelayed({
+            startActivity(
+                Intent(this@SplashActivity, MainActivity::class.java).putExtra(
+                    Constant.FROM, ""
+                ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+        }, SPLASH_TIME_OUT.toLong())
+    }
+
 }

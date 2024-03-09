@@ -10,8 +10,8 @@ android {
         applicationId "com.groger.customer"
         minSdkVersion 27
         targetSdkVersion 33
-        versionCode 12
-        versionName "5.0.3"
+        versionCode 1
+        versionName "1.0.0"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         proguardFiles

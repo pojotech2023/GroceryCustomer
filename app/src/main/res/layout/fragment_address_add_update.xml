@@ -187,7 +187,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:enabled="false">
 
                     <EditText
                         android:id="@+id/edtState"
@@ -197,6 +198,8 @@
                         android:hint="@string/state"
                         android:importantForAutofill="no"
                         android:inputType="text"
+                        android:text="Tamil Nadu"
+                        android:enabled="false"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -204,7 +207,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:enabled="false">
 
                     <EditText
                         android:id="@+id/edtCountry"
@@ -214,6 +218,8 @@
                         android:hint="@string/country"
                         android:importantForAutofill="no"
                         android:inputType="text"
+                        android:text="India"
+                        android:enabled="false"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
                 </com.google.android.material.textfield.TextInputLayout>
 

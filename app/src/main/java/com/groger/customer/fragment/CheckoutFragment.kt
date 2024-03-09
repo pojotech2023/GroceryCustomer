@@ -13,6 +13,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -378,6 +379,7 @@ class CheckoutFragment : Fragment() {
                             if (offset == 0) {
                                 recyclerView.visibility = View.VISIBLE
                                 tvAlert.visibility = View.GONE
+                                Log.d("PROMO_CODE LIST",Gson().toJson(promoCodes))
                                 promoCodeAdapter = PromoCodeAdapter(activity, promoCodes, dialog)
                                 promoCodeAdapter.setHasStableIds(true)
                                 recyclerView.adapter = promoCodeAdapter
@@ -480,6 +482,9 @@ class CheckoutFragment : Fragment() {
                 }
             }
         }, activity, Constant.PROMO_CODE_CHECK_URL, params, false)
+
+        Log.d("PROMO_CODE","URL "+Constant.PROMO_CODE_CHECK_URL + " " + "DATA " + Gson().toJson(params))
+
     }
 
     inner class PromoCodeAdapter(
