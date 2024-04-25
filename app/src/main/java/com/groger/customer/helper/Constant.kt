@@ -15,7 +15,7 @@ object Constant {
     //set your jwt secret key here...key must same in PHP and Android
     const val JWT_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDk0NTk0OTEsImlzcyI6ImVLYXJ0IiwiZXhwIjoxNzA5NDYxMjkxLCJzdWIiOiJlS2FydCBBdXRoZW50aWNhdGlvbiIsIndlYiI6IjI5MjYwNDE4IiwiY3VzdCI6IjIyMDE1OTExIiwiYWRtaW4iOiIzMDI4ODQ0MiJ9.bgH-PgHrdhfbr1NGeZs6D66AsxoS_bDI29VYYaPKwkE"
 
-    const val GRID_COLUMN = 3 //Category View Number Of Grid Per Line
+    const val GRID_COLUMN = 4 //Category View Number Of Grid Per Line
 
     const val LOAD_ITEM_LIMIT = 10 //Load items limit in listing ,Maximum load item once
 

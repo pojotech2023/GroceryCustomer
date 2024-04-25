@@ -314,8 +314,7 @@ class ApiConfig : Application() {
                         if (isProgress) progressDisplay.hideProgress()
                         callback.onSuccess(false, "")
                         val message = volleyErrorMessage(error)
-                        if (message != "") Toast.makeText(activity, message, Toast.LENGTH_SHORT)
-                            .show()
+                        if (message != "") Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
                     }) {
                     override fun getHeaders(): MutableMap<String, String> {
                         val params1: MutableMap<String, String> = HashMap()
@@ -521,6 +520,9 @@ class ApiConfig : Application() {
             val params: MutableMap<String, String> = HashMap()
             params[Constant.SETTINGS] = Constant.GetVal
             params[Constant.GET_TIMEZONE] = Constant.GetVal
+
+            println("Settings"+"${Constant.GetVal}");
+
             requestToVolley(object : VolleyCallback {
                 override fun onSuccess(result: Boolean, response: String) {
                     if (result) {

@@ -661,6 +661,9 @@ class PaymentActivity : AppCompatActivity(), PaymentResultListener,
                 sendParams[Constant.LATITUDE] = session.getCoordinates(Constant.LATITUDE)
                 sendParams[Constant.EMAIL] = session.getData(Constant.EMAIL)
                 sendParams[Constant.ORDER_NOTE] = tvSpecialNote.text.toString()
+
+                println("Wallet ${sendParams}")
+
                 if (paymentMethod == resources.getString(R.string.cash_on_delivery) || paymentMethod == getString(
                         R.string.wallet_type
                     ) || paymentMethod == getString(R.string.bank_transfer)

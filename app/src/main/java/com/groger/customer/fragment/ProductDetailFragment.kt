@@ -458,10 +458,13 @@ class ProductDetailFragment : Fragment() {
         } else {
             params[Constant.PRODUCT_ID] = productId
         }
-        if (session.getBoolean(Constant.IS_USER_LOGIN)) params[Constant.USER_ID] =
-            session.getData(
-                Constant.ID
-            )
+        if (session.getBoolean(Constant.IS_USER_LOGIN)) params[Constant.USER_ID] = session.getData(Constant.ID)
+
+
+        println("Parmesss"+"${params}")
+        println("ProductId"+"${productId}");
+        println("ProductId"+"${session.getData(Constant.ID)}");
+
         requestToVolley(object : VolleyCallback {
             override fun onSuccess(result: Boolean, response: String) {
                 if (result) {
@@ -773,7 +776,7 @@ class ProductDetailFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Constant.TOOLBAR_TITLE = getString(R.string.app_name)
+        //Constant.TOOLBAR_TITLE = product.name
         activity.invalidateOptionsMenu()
         hideKeyboard()
     }
@@ -794,6 +797,7 @@ class ProductDetailFragment : Fragment() {
 //        GST_Amount (Original Cost x GST %)/100
 //        Net_Price Original Cost + GST Amount
         try {
+            Constant.TOOLBAR_TITLE = product.name
             tvProductName.text = product.name
             tvMeasurement.text = variants.measurement + variants.measurement_unit_name
             if (session.getBoolean(Constant.IS_USER_LOGIN)) {

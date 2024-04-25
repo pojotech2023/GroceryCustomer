@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_20sdp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logo_login"
+        android:src="@drawable/logo"
         tools:ignore="ImageContrastCheck" />
 
     <!--Login lyt-->
@@ -69,7 +69,6 @@
                     android:drawableStart="@drawable/ic_phone"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="@string/mobile"
-                    android:text="9876543210"
                     android:importantForAutofill="yes"
                     android:inputType="phone|number"
                     android:padding="@dimen/_7sdp"
@@ -98,7 +97,6 @@
                     android:drawablePadding="@dimen/_10sdp"
                     android:importantForAutofill="yes"
                     android:hint="@string/password"
-                    android:text="12345678"
                     android:inputType="textPassword"
                     android:padding="@dimen/_7sdp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"

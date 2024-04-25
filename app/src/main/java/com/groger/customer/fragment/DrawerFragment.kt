@@ -118,8 +118,8 @@ class DrawerFragment : Fragment() {
             Glide.with(activity).load("-")
                 
                 .centerInside()
-                .placeholder(R.drawable.logo_login)
-                .error(R.drawable.logo_login)
+                .placeholder(R.drawable.logo)
+                .error(R.drawable.logo)
                 .into(imgProfile)
         }
         imgEditProfile.setOnClickListener {

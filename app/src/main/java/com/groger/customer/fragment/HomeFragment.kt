@@ -207,7 +207,7 @@ class HomeFragment : Fragment() {
         }
         if (isConnected(activity)) {
             getWalletBalance(activity, Session(activity))
-            getHomeData()
+            //getHomeData()
         } else {
             nestedScrollView.visibility = View.VISIBLE
             mShimmerViewContainer.visibility = View.GONE
@@ -429,6 +429,18 @@ class HomeFragment : Fragment() {
         activity.invalidateOptionsMenu()
         getSettings(activity)
         hideKeyboard()
+        println("CalledWhenBackPressed")
+
+        if (isConnected(activity)) {
+            //getWalletBalance(activity, Session(activity))
+            getHomeData()
+        } else {
+            nestedScrollView.visibility = View.VISIBLE
+            mShimmerViewContainer.visibility = View.GONE
+            mShimmerViewContainer.stopShimmer()
+        }
+
+
     }
 
     fun hideKeyboard() {

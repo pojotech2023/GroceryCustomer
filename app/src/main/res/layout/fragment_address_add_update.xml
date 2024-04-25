@@ -173,6 +173,8 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:maxLength="6"
+                    android:text="600055"
+                    android:visibility="gone"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,7 +184,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2"
-                android:baselineAligned="false">
+                android:baselineAligned="false"
+                android:visibility="gone"
+                >
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"

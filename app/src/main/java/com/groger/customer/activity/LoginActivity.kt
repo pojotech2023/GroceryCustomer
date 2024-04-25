@@ -603,6 +603,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun userLogin(mobile: String, password: String) {
         val params: MutableMap<String, String> = HashMap()
+
+        println("EnteredData"+mobile+" "+password+" "+session.getData(Constant.FCM_ID))
+
         params[Constant.MOBILE] = mobile
         params[Constant.PASSWORD] = password
         params[Constant.FCM_ID] = "" + session.getData(Constant.FCM_ID)
@@ -721,6 +724,7 @@ class LoginActivity : AppCompatActivity() {
                 jsonObject.getString(Constant.REFERRAL_CODE),
                 jsonObject.getString(Constant.BALANCE)
             )
+            println("WalletBalance"+jsonObject.getString(Constant.BALANCE))
             addMultipleProductInCart(session, activity, databaseHelper.cartData)
             addMultipleProductInSaveForLater(
                 session,

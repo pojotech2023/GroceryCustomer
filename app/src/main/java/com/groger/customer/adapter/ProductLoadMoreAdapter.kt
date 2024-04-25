@@ -57,6 +57,8 @@ class ProductLoadMoreAdapter(
     }
 
     override fun onBindViewHolder(holderParent: RecyclerView.ViewHolder, position: Int) {
+
+
         if (holderParent is ItemHolder) {
             try {
                 val product = productArrayList[position]!!

@@ -33,7 +33,7 @@
             android:layout_marginTop="@dimen/_3sdp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo_login" />
+            android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/productName"

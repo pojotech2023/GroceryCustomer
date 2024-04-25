@@ -83,7 +83,9 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorPrimary"
                 android:padding="@dimen/_10sdp"
-                android:text="@string/door_step_delivery" />
+                android:text="@string/door_step_delivery"
+                android:checked="true"
+                />
 
             <RadioButton
                 android:id="@+id/rbPickupFromStore"
@@ -91,7 +93,9 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorPrimary"
                 android:padding="@dimen/_10sdp"
-                android:text="@string/pickup_from_store" />
+                android:text="@string/pickup_from_store"
+                android:visibility="gone"
+                />
         </RadioGroup>
 
         <TextView

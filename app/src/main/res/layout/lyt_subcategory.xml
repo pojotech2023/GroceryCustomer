@@ -24,14 +24,14 @@
 
         <ImageView
             android:id="@+id/imgCategory"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
             android:layout_height="120dp"
             android:scaleType="fitXY"
             android:contentDescription="@string/app_name" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-                android:textAlignment="center"
+        android:textAlignment="center"
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

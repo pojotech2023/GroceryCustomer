@@ -287,8 +287,8 @@ class AddressAddUpdateFragment : Fragment(), OnMapReadyCallback {
     @SuppressLint("NotifyDataSetChanged")
     fun addUpdateAddress() {
         val isDefault = if (chIsDefault.isChecked) "1" else "0"
-        val type =
-            if (rdHome.isChecked) "Home" else if (rdOffice.isChecked) "Office" else "Other"
+        val type = if (rdHome.isChecked) "Home" else if (rdOffice.isChecked) "Office" else "Other"
+        edtPinCode.text="600055";
         when {
             cityId == "0" -> {
                 Toast.makeText(activity, "Please select city!", Toast.LENGTH_SHORT).show()
@@ -312,6 +312,7 @@ class AddressAddUpdateFragment : Fragment(), OnMapReadyCallback {
                 edtLandmark.requestFocus()
                 edtLandmark.error = "Please enter landmark!"
             }
+
             edtPinCode.text.toString().isEmpty() -> {
                 edtPinCode.requestFocus()
                 edtPinCode.error = "Please enter pin code!"

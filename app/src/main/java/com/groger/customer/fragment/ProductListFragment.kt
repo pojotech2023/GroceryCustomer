@@ -139,7 +139,7 @@ class ProductListFragment : Fragment() {
                 tabLayout1.visibility = View.VISIBLE
                 tab = tabLayout.newTab().setText(activity.getString(R.string.loading))
                     .setTag("0")
-                tabLayout.addTab(tab)
+                //tabLayout.addTab(tab)
                 getFlashSales(offsetFlashSaleNames, tab)
                 tabLayout.viewTreeObserver.addOnScrollChangedListener {
                     val windowSize = Point()
@@ -149,7 +149,7 @@ class ProductListFragment : Fragment() {
                         tab =
                             tabLayout.newTab().setText(activity.getString(R.string.loading))
                                 .setTag("0")
-                        tabLayout.addTab(tab)
+                        //tabLayout.addTab(tab)
                         offsetFlashSaleNames += Constant.LOAD_ITEM_LIMIT
                         getFlashSales(offsetFlashSaleNames, tab)
                     }
@@ -243,7 +243,7 @@ class ProductListFragment : Fragment() {
                 activity, productArrayList, resource, from, hashMap
             )
 
-            tabLayout.viewTreeObserver.addOnScrollChangedListener {
+            /*tabLayout.viewTreeObserver.addOnScrollChangedListener {
                 val windowSize = Point()
                 val scrollX = tabLayout.scrollX
                 val maxScrollWidth = tabLayout.getChildAt(0).measuredWidth - windowSize.x
@@ -253,7 +253,7 @@ class ProductListFragment : Fragment() {
                     offsetFlashSaleNames += Constant.LOAD_ITEM_LIMIT
                     getFlashSales(offsetFlashSaleNames, tab)
                 }
-            }
+            }*/
 
             tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab) {
@@ -352,6 +352,11 @@ class ProductListFragment : Fragment() {
     }
 
     private fun getFlashSales(offset: Int, tab: TabLayout.Tab) {
+
+      /*  if(flashSalesLists!=null && flashSalesLists.size>0){
+            flashSalesLists.clear();
+        }*/
+
         val params: MutableMap<String, String> = HashMap()
         params[Constant.GET_ALL_FLASH_SALES] = Constant.GetVal
         params[Constant.OFFSET] = "" + offset
@@ -360,7 +365,7 @@ class ProductListFragment : Fragment() {
             override fun onSuccess(result: Boolean, response: String) {
                 if (result) {
                     try {
-                        tabLayout.removeTab(tab)
+                        //tabLayout.removeTab(tab)
                         val jsonObject = JSONObject(response)
                         if (!jsonObject.getBoolean(Constant.ERROR)) {
                             totalFlashSales = jsonObject.getString(Constant.TOTAL).toInt()
@@ -622,6 +627,11 @@ class ProductListFragment : Fragment() {
     }
 
     fun getData() {
+
+        if(productArrayList!=null && productArrayList.size>0){
+            productArrayList.clear()
+        }
+
         productArrayList = ArrayList()
         recyclerView.adapter =
             ProductLoadMoreAdapter(activity, productArrayList, resource, from, hashMap)
@@ -989,6 +999,7 @@ class ProductListFragment : Fragment() {
             hideKeyboard()
         }
         val productArrayList1 = productArrayList
+
         if (Constant.countList.size != 0) {
             if (!session.getBoolean(Constant.IS_USER_LOGIN)) {
                 productLoadMoreAdapter.notifyDataSetChanged()

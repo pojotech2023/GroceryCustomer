@@ -34,7 +34,7 @@
                     android:layout_height="@dimen/_60sdp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/logo_login"
+                    android:src="@drawable/logo"
                     android:contentDescription="@string/app_name" />
 
                 <TextView
