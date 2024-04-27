@@ -158,7 +158,7 @@
         android:layout_below="@id/imgLogo"
         android:background="@drawable/login_curve"
         android:backgroundTint="@color/white"
-        android:padding="@dimen/_40sdp"
+        android:padding="@dimen/_30sdp"
         android:visibility="gone">
 
         <LinearLayout
@@ -254,7 +254,7 @@
                     app:pinBackground="@drawable/sample_background"
                     app:pinHeight="35dp"
                     app:pinLength="6"
-                    app:pinWidth="40dp" />
+                    app:pinWidth="32dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
